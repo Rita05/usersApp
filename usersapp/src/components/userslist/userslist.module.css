@@ -1,0 +1,24 @@
+.Card{
+    width: 420px;
+    height: 73px;
+    left: 0px;
+    top: 2px;
+    margin-top: 14px;
+    
+}
+.CardContent{
+    background-color: #F3F3F3;
+}
+
+.ListItem{
+    width: 74px;
+    height: 13px;
+}
+
+.ListItemText{
+    font-family: 'Roboto';
+    font-style: normal; 
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 13px;
+}
