@@ -1,9 +1,24 @@
+.userscontainer{
+    /* width: 513px;
+    height: 1028px; */
+}
+
+.userscontainer-title{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 16px;
+    color: #000000;
+    margin: 19px 0 17px 34px;
+}
+
 .Card{
     width: 420px;
     height: 73px;
     left: 0px;
     top: 2px;
-    margin-top: 14px;
+    margin: 17px 0 14px 31px;
     box-shadow: none !important;
     background-color: #F3F3F3 !important;
     
@@ -25,7 +40,6 @@
     line-height: 13px;
 }
 
-
 .userblock-profileref{
     position: absolute;
     bottom: 10px;
@@ -36,4 +50,5 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
+    color: #4B51EF;
 }

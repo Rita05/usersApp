@@ -1,21 +1,29 @@
-import * as React from 'react';
-import { styled } from '@mui/material/styles';
-import { List, ListItem, Grid, Typography, ListItemText, Card, CardContent } from '@mui/material';
-import {UsersListItem} from './useritem'
+import { Container, Card } from '@mui/material'
+import './userslist.css'
 
-const UsersList = (props: any) => {
 
-    return (
-        // <Grid item xs={12} md={6}>
-        <Grid container spacing={24} style={{padding: 24}}>
-            <Grid item xs={12} sm={6} lg={4} xl={3}>
-                <UsersListItem users={props.users}/>
-            </Grid>
-        </Grid>
-        // </Grid>
-    )
+export const UsersList = (props: any) => {
+
+  return (
+    // <Container className='userscontainer'>
+    <>
+      <div className='userscontainer-title'>Список пользователей</div>
+      {props.users.map((user: any) =>
+        <Card key={user.id} className='Card'>
+          <div className='userblock'>
+            <div className='userblock-info'>ФИО: {user.name}</div>
+            <div className='userblock-info'>город: {user.address.city}</div>
+            <div className='userblock-info'>компания: {user.company.name}</div>
+            <div className='userblock-profileref'>
+              <a href="#" className="userprofile-ref">Подробнее</a>
+            </div>
+          </div>
+        </Card>
+      )}
+      </>
+    // </Container>
+  )
 
 }
-
 
 export default UsersList

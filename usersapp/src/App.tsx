@@ -1,14 +1,15 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
-import UsersListContainer from './components/userslist/container'
+import React from 'react'
+import './App.css'
+import { Container, Box} from '@mui/material'
+import UsersPage from './components/pages/userspage'
 
 function App() {
   return (
-    <>
-      {/* <Button>HI</Button> */}
-    <UsersListContainer />
-    </>
+    <Container>
+      <Box className="Box">
+          <UsersPage/>
+      </Box>
+    </Container> 
   );
 }
 

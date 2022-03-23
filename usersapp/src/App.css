@@ -2,15 +2,13 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.Box{
+  width: 665px;
+  height: 1028px;
+  left: 225px;
+  top: 87px;
+  background-color: #FFFFFF;
+  border: 2px solid black !important;
 }
 
 .App-header {
