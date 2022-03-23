@@ -2,7 +2,6 @@
     width: 152px;
     height: 1028px;
     background-color: #BDBDBD;
-    /* position: relative; */
 }
 
 .panel-title{
@@ -11,38 +10,40 @@
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
+    padding: 35.17px 0 0 20.27px;
 }
 
 .panel-buttons-group{
-    /* position: absolute !important; */
-    padding: 10px 0 0 0;
-    /* margin-left: 10px; */
-
+    padding: 10.05px 0 0 20px ;
 }
 
 .button-city{
+    margin-top: 10.05px;
     width: 86.13px;
     height: 24.12px;
-    background-color: #4B51EF !important;
+    background-color: #4B51EF;
+    border: none;
     border-radius: 5px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 12px;
-    line-height: 14px;
+    font-size: 12px ;
+    line-height: 14px ;
     color: #FFFFFF;
 }
 
 .button-company{
+    margin-top: 10.05px;
     width: 105.39px;
     height: 24.12px;
-    background-color: #4B51EF !important;
+    border: none;
+    background-color: #4B51EF;
     border-radius: 5px;
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
-    color: #FFFFFF;
+    color: #FFFFFF ;
 
 }

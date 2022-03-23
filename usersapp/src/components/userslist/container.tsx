@@ -15,7 +15,7 @@ const UsersListContainer = (props: any): React.ReactElement => {
         const interval = setInterval(() => {
             props.ongetUsersFromInterval()
             console.log('Users loading')
-        }, 3000)
+        }, 5000)
         return () => clearInterval(interval)
     }, [])
 

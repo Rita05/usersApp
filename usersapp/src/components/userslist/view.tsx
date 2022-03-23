@@ -1,27 +1,27 @@
-import { Container, Card } from '@mui/material'
 import './userslist.css'
 
 
 export const UsersList = (props: any) => {
 
   return (
-    // <Container className='userscontainer'>
     <>
-      <div className='userscontainer-title'>Список пользователей</div>
+      <div className='users-title'>Список пользователей</div>
       {props.users.map((user: any) =>
-        <Card key={user.id} className='Card'>
+        <div key={user.id} className='user-item'>
+        <div className='user-wrapper'>
           <div className='userblock'>
             <div className='userblock-info'>ФИО: {user.name}</div>
             <div className='userblock-info'>город: {user.address.city}</div>
             <div className='userblock-info'>компания: {user.company.name}</div>
-            <div className='userblock-profileref'>
-              <a href="#" className="userprofile-ref">Подробнее</a>
             </div>
-          </div>
-        </Card>
+            <div className='userblock-ref'>
+              <a href="#" className='profile-ref'>Подробнее</a>
+            </div>
+        </div>
+        </div>
       )}
+      <div className='users-number'>Найдено {props.users.length} пользователей</div>
       </>
-    // </Container>
   )
 
 }
