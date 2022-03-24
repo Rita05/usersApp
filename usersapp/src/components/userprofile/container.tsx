@@ -1,8 +1,10 @@
 
-import React, { useState } from 'react';
-import UserProfileForm from './userprofile';
+import React, { useState } from 'react'
+import UserProfileForm from './userprofile'
+import { connect } from 'react-redux'
 
-const UserProfile=() => {
+
+const UserProfile=(props: any) => {
     const [onEdit, setOnEdit] = useState(false);
 
     const onSubmit = (values: any) => {
@@ -13,9 +15,25 @@ const UserProfile=() => {
         setOnEdit(!onEdit);
     };
 
+    const templateProps={
+        user: props.user
+    }
+
     return (
-        <UserProfileForm onSubmit={onSubmit} onEdit={onEdit} onEditBtnClick={onEditBtnClick}/>
+        <UserProfileForm {...templateProps} onSubmit={onSubmit} onEdit={onEdit} onEditBtnClick={onEditBtnClick}/>
     );
 };
 
-export default UserProfile
+const mapStateToProps = (state: any) => {
+    return {
+        ...state.UserProfileReducer
+    }
+}
+
+const mapDispatchToProps = (dispatch: any) => {
+    return {
+    }
+
+}
+
+export default connect(mapStateToProps, mapDispatchToProps) (UserProfile)

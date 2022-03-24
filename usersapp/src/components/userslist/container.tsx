@@ -1,6 +1,7 @@
 import { connect } from 'react-redux'
 import UsersList from './view'
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
+import {Navigate} from 'react-router-dom'
 import action from './action'
 import { User } from './reducer'
 
@@ -10,6 +11,9 @@ export type PropsType = {
 }
 
 const UsersListContainer = (props: any): React.ReactElement => {
+
+    const [isRedirectToUserProfile, setRedirectToUserProfile] = useState(false)
+
     useEffect(() => {
         props.ongetUsersFromInterval()
         const interval = setInterval(() => {
@@ -20,8 +24,17 @@ const UsersListContainer = (props: any): React.ReactElement => {
     }, [])
 
 
+    const onUserProfileRedirect=()=>{
+        setRedirectToUserProfile(true)
+    }
+
+    if(isRedirectToUserProfile){
+        return <Navigate to='/userprofile' replace={true}/>
+    }
+
     const templateProps = {
-        users: props.users
+        users: props.users,
+        onUserProfileRedirect
     }
 
     return (

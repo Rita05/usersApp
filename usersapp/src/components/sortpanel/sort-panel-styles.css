@@ -17,7 +17,7 @@
     padding: 10.05px 0 0 20px ;
 }
 
-.button-city{
+.panel-buttons-group__button_city{
     margin-top: 10.05px;
     width: 86.13px;
     height: 24.12px;
@@ -32,7 +32,7 @@
     color: #FFFFFF;
 }
 
-.button-company{
+.panel-buttons-group__button_company{
     margin-top: 10.05px;
     width: 105.39px;
     height: 24.12px;

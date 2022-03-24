@@ -10,12 +10,12 @@ export const UsersList = (props: any) => {
         <div key={user.id} className='user-item'>
         <div className='user-wrapper'>
           <div className='userblock'>
-            <div className='userblock-info'>ФИО: {user.name}</div>
-            <div className='userblock-info'>город: {user.address.city}</div>
-            <div className='userblock-info'>компания: {user.company.name}</div>
+            <div className='userblock__info'>ФИО: {user.name}</div>
+            <div className='userblock__info'>город: {user.address.city}</div>
+            <div className='userblock__info'>компания: {user.company.name}</div>
             </div>
-            <div className='userblock-ref'>
-              <a href="#" className='profile-ref'>Подробнее</a>
+            <div className='user-redirect'>
+              <a href="#" className='user-redirect__ref' onClick={()=>props.onUserProfileRedirect(user)}>Подробнее</a>
             </div>
         </div>
         </div>
