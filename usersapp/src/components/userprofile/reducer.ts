@@ -1,7 +1,7 @@
 import {TYPES} from '../userslist/action'
 
 export const initialState = {
-    user: []
+    user: {}
 }
 
 

@@ -80,7 +80,7 @@
     height: 22px;
     margin: 3px 0 0 12px;
     padding: 5px 10px;
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     border: 1px solid #D8D8D8;
     box-sizing: border-box;
     border-radius: 5px;
@@ -96,7 +96,7 @@
     height: 22px;
     margin: 3px 0 0 12px;
     padding: 5px 10px;
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     border: 1px solid #D8D8D8;
     box-sizing: border-box;
     border-radius: 5px;
@@ -112,7 +112,7 @@
     height: 22px;
     margin: 3px 0 0 12px;
     padding: 5px 10px;
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     border: 1px solid #D91313;
     box-sizing: border-box;
     border-radius: 5px;

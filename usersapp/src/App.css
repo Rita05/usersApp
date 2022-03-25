@@ -5,8 +5,7 @@
 .Box{
   width: 665px;
   height: 1028px;
-  left: 225px;
-  top: 87px;
+  margin: 87px 0 1621px 225px;
   background-color: #FFFFFF;
 }
 

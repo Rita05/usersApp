@@ -24,7 +24,8 @@ const UsersListContainer = (props: any): React.ReactElement => {
     }, [])
 
 
-    const onUserProfileRedirect=()=>{
+    const onUserProfileRedirect=(user: any)=>{
+        props.sendUserProfileData(user)
         setRedirectToUserProfile(true)
     }
 
@@ -55,7 +56,8 @@ const mapStateToProps = (state: any) => {
 
 const mapDispatchToProps = (dispatch: any) => {
     return {
-        ongetUsersFromInterval: () => dispatch(action.ongetUsersAction())
+        ongetUsersFromInterval: () => dispatch(action.ongetUsersAction()),
+        sendUserProfileData: (user: any) =>dispatch(action.sendUserProfileDataAction(user))
     }
 
 }

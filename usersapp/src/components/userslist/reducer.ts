@@ -16,9 +16,6 @@ export type Address = {
     suite: string, 
     city: string, 
     zipcode: string, 
-    phone: string, 
-    website: string, 
-    company: Company,
     geo: Geo
 }
 
@@ -27,7 +24,10 @@ export type User = {
     name: string, 
     username: string, 
     email: string, 
-    address: Address
+    address: Address,
+    company: Company,
+    phone: string, 
+    website: string, 
 }
 
 export type StateType = {

@@ -1,12 +1,12 @@
 import './userslist.css'
-
+import {User} from './reducer'
 
 export const UsersList = (props: any) => {
 
   return (
     <>
       <div className='users-title'>Список пользователей</div>
-      {props.users.map((user: any) =>
+      {props.users.map((user: User) =>
         <div key={user.id} className='user-item'>
         <div className='user-wrapper'>
           <div className='userblock'>
