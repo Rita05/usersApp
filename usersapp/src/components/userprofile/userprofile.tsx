@@ -17,7 +17,7 @@ const UserProfileForm=(props: PropTypes) : React.ReactElement =>  {
 
     const validationSchema = {
         name: Yup.string().required(),
-        userName: Yup.string().required(),
+        username: Yup.string().required(),
         email: Yup.string().email().required(),
         street: Yup.string().required(),
         city: Yup.string().required(),
@@ -28,14 +28,15 @@ const UserProfileForm=(props: PropTypes) : React.ReactElement =>  {
     }
 
     const initialValues = {
-        name: '',
-        username: '',
-        email: '',
-        street: '',
-        city: '',
-        zipcode: '',
-        phone: '',
-        website: ''
+        name: props.user.name,
+        username: props.user.username,
+        email: props.user.email,
+        street: props.user.address.street,
+        city: props.user.address.city,
+        zipcode: props.user.address.zipcode,
+        phone: props.user.phone,
+        website: props.user.website,
+        comment: ''
 
     };
 
@@ -71,7 +72,7 @@ const UserProfileForm=(props: PropTypes) : React.ReactElement =>  {
                             <div className="profile-form__header__title">
                                 Профиль пользователя
                             </div>
-                            <button className="profile-form__header__editBtn" onClick={props.onEditBtnClick}>
+                            <button className="profile-form__header__editBtn" type="button" onClick={props.onEditBtnClick}>
                                 Редактировать
                             </button>
                         </div>
@@ -80,51 +81,51 @@ const UserProfileForm=(props: PropTypes) : React.ReactElement =>  {
                         <div className='profile-form__input-group'>
                             <label className={labelStyle} htmlFor="name">Name</label>
                             <input readOnly={!onEdit} className={selectInputStyle("name", formik)} id="name" 
-                                   type="text"{...formik.getFieldProps('name')} placeholder='Иван Иванов' value={props.user.name}/>
+                                   type="text"{...formik.getFieldProps('name')} placeholder='Иван Иванов'/>
                         </div>
                         <div className='profile-form__input-group'>
                             <label className={labelStyle} htmlFor="username">User Name</label>
                             <input readOnly={!onEdit} className={selectInputStyle("username", formik)} id="username" 
-                                   type="text"{...formik.getFieldProps('username')} placeholder='Ivan' value={props.user.username}/>
+                                   type="text"{...formik.getFieldProps('username')} placeholder='Ivan'/>
                         </div>
                         <div className='profile-form__input-group'>
                             <label className={labelStyle} htmlFor="email">E-mail</label>
                             <input readOnly={!onEdit} className={selectInputStyle("email", formik)} id="email"
-                                   type="email" {...formik.getFieldProps('email')} placeholder='example@mail.com' value={props.user.email}/>
+                                   type="email" {...formik.getFieldProps('email')} placeholder='example@mail.com'/>
                         </div>
                         <div className='profile-form__input-group'>
                             <label className={labelStyle} htmlFor="street">Street</label>
                             <input readOnly={!onEdit} className={selectInputStyle("street", formik)} id="street"
-                                   type="text"{...formik.getFieldProps('street')} placeholder='ул. Пример' value={props.user.address.street}/>
+                                   type="text"{...formik.getFieldProps('street')} placeholder='ул. Пример'/>
                         </div>
                         <div className='profile-form__input-group'>
                             <label className={labelStyle} htmlFor="city">City</label>
                             <input readOnly={!onEdit} className={selectInputStyle("city", formik)} id="city"
-                                   type="text"{...formik.getFieldProps('city')} placeholder='Москва' value={props.user.address.city}/>
+                                   type="text"{...formik.getFieldProps('city')} placeholder='Москва'/>
                         </div>
                         <div className='profile-form__input-group'>
                             <label className={labelStyle} htmlFor="zipcode">Zip Code</label>
                             <input readOnly={!onEdit} className={selectInputStyle("zipcode", formik)} id="zipcode"
-                                   type="text"{...formik.getFieldProps('zipcode')} placeholder='1234234' value={props.user.address.zipcode}/>
+                                   type="text"{...formik.getFieldProps('zipcode')} placeholder='1234234'/>
                         </div>           
                         <div className='profile-form__input-group'>
                             <label className={labelStyle} htmlFor="phone">Phone</label>
                             <input readOnly={!onEdit} className={selectInputStyle("phone", formik)} id="phone"
-                                   type="text"{...formik.getFieldProps('phone')} placeholder='89991112233' value={props.user.phone}/>
+                                   type="text"{...formik.getFieldProps('phone')} placeholder='89991112233'/>
                         </div>           
                         <div className='profile-form__input-group'>
                             <label className={labelStyle} htmlFor="website">Website</label>
                             <input readOnly={!onEdit} className={selectInputStyle("website", formik)} id="website"
-                                   type="text"{...formik.getFieldProps('website')} placeholder='www.example.com' value={props.user.website}/>
+                                   type="text"{...formik.getFieldProps('website')} placeholder='www.example.com'/>
                         </div>
                         <div className='profile-form__input-group'>
                             <label className={labelStyle} htmlFor="comment">Comment</label>
                             <input readOnly={!onEdit} className={selectCommentStyle()} id="comment"
-                                   type="text"{...formik.getFieldProps('comment')} value=''/>
+                                   type="text"{...formik.getFieldProps('comment')}/>
                         </div>
                         </div>
                         <div className="profile-form__btnSubmit__wrapper">
-                            <button className={selectSubmitBtnStyle()} type="button">Отправить</button>
+                            <button disabled={!onEdit} className={selectSubmitBtnStyle()} type="submit">Отправить</button>
                         </div>
                     </form>
                 )}
