@@ -40,7 +40,8 @@ const UserProfileForm=(props: PropTypes) : React.ReactElement =>  {
 
     };
 
-    const formStyle = props.onEdit ? "profile-form_enabled" : "profile-form_disabled";
+    // const formStyle = props.onEdit ? "profile-form_enabled" : "profile-form_disabled";
+    const formStyle="profile-form_styled"
     const labelStyle = "profile-form__label";
 
     const selectInputStyle = (inputName: string, formik: any) => {

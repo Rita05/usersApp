@@ -1,5 +1,5 @@
 
-.profile-form_disabled {
+/* .profile-form_disabled {
     display: flex;
     flex-direction: column;
     width: 438px;
@@ -9,11 +9,8 @@
     border: 1px solid #F3F3F3;
     box-sizing: border-box;
     border-radius: 8px;
-}
+} */
 
-.profile-form_disabled > input {
-    color: rgba(0, 0, 0, 0.3);
-}
 
 .profile-form__header {
     display: flex;
@@ -47,7 +44,7 @@
     color: #FFFFFF;
 }
 
-.profile-form_enabled {
+.profile-form_styled {
     display: flex;
     flex-direction: column;
     width: 438px;
@@ -128,17 +125,22 @@
     width: 420px;
     height: 55px;
     margin: 3px 0 0 12px;
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     border: 1px solid #D8D8D8;
     box-sizing: border-box;
     border-radius: 5px;
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
 }
 
 .profile-form__comment_disabled {
     width: 420px;
     height: 55px;
     margin: 3px 0 0 12px;
-    background: #FFFFFF;
+    background-color: #FFFFFF;
     border: 1px solid #D8D8D8;
     box-sizing: border-box;
     border-radius: 5px;
@@ -147,7 +149,7 @@
 .profile-form__btnSubmit_enabled {
     width: 85px;
     height: 24.12px;
-    background: #52CF4F;
+    background-color: #52CF4F;
     border-radius: 5px;
     border: none;
     font-family: 'Roboto';
@@ -161,7 +163,7 @@
 .profile-form__btnSubmit_disabled {
     width: 85px;
     height: 24.12px;
-    background: #AFAFAF;
+    background-color: #AFAFAF;
     border-radius: 5px;
     border: none;
     font-family: 'Roboto';

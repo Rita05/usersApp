@@ -30,10 +30,4 @@ const mapStateToProps = (state: any) => {
     }
 }
 
-const mapDispatchToProps = (dispatch: any) => {
-    return {
-    }
-
-}
-
-export default connect(mapStateToProps, mapDispatchToProps) (UserProfile)
+export default connect(mapStateToProps, null) (UserProfile)
