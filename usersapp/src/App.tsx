@@ -18,7 +18,7 @@ const App: React.FC<Props> = ({ }) => {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<UsersPage/>} />
-            <Route path="/userprofile" element={<UserProfilePage/>} />
+            <Route path="/userprofile/*" element={<UserProfilePage/>} />
           </Routes>
         </BrowserRouter>
       </Box>

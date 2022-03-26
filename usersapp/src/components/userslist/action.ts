@@ -1,8 +1,7 @@
 import UsersListApi from './userapi'
 
 export const TYPES = {
-    TYPE_ONGET_USERS: 'get-array-users',
-    TYPE_SEND_USER_PROFILE_DATA: 'send-profile-data'
+    TYPE_ONGET_USERS: 'get-array-users'
 }
 
 const ongetUsers=(users: any)=>{
@@ -20,14 +19,6 @@ export const ongetUsersAction=()=>async(dispatch: any)=>{
     }
 }
 
-const sendUserProfileDataAction=(user: any)=>{
-    return{
-        type: TYPES.TYPE_SEND_USER_PROFILE_DATA,
-        user: user
-    }
-}
-
 export default{
-    ongetUsersAction,
-    sendUserProfileDataAction
+    ongetUsersAction
 }

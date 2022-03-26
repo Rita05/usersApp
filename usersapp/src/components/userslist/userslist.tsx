@@ -1,7 +1,12 @@
-import './userslist.css'
+import './style.css'
 import {User} from './reducer'
 
-export const UsersList = (props: any) => {
+export type PropsType={
+     users: User[],
+     onUserProfileRedirect: (arg: User)=>void
+}
+
+export const UsersList = (props: PropsType) => {
 
   return (
     <>
