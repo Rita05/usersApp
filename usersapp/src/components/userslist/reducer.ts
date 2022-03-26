@@ -40,12 +40,14 @@ enum SortType {
 
 export type StateType = {
     users: User[], 
-    sortType: SortType
+    sortType: SortType,
+    isLoading: boolean
 }
 
 export const initialState: StateType = {
     users: new Array<User>(), 
-    sortType: SortType.NONE
+    sortType: SortType.NONE,
+    isLoading: true
 }
 
 function sortByCity(users: User[]): User[] {
@@ -70,7 +72,8 @@ export const UsersListReducer = (state: StateType = initialState, action: any) =
         case TYPES.TYPE_ONGET_USERS:
             return {
                 ...state,
-                users: sortUsers(action.users, state.sortType)
+                users: sortUsers(action.users, state.sortType),
+                isLoading: false
             }
         case PanelActionsTypes.TYPE_SORT_BY_CITY:
             return {

@@ -237,7 +237,11 @@ class UsersListApi {
     }
     async getUsers(){
       let response=await fetch('https://jsonplaceholder.typicode.com/users')
-      return await response.json()
+      // return await response.json()
+      const users = await response.json()
+      return new Promise((resolve: any, reject: any) => {
+        setTimeout(() => resolve(users), 2000)
+      });
   }
 }
 

@@ -13,8 +13,8 @@ const ongetUsers=(users: any)=>{
 }
 
 export const ongetUsersAction=()=>async(dispatch: any)=>{
-    let users=UsersListApi.getTestUsers()
-    // let users=await UsersListApi.getUsers()
+    // let users=UsersListApi.getTestUsers()
+    let users=await UsersListApi.getUsers()
     if (users){
         dispatch(ongetUsers(users))
     }
