@@ -79,13 +79,13 @@ export const UsersListReducer = (state: StateType = initialState, action: any) =
             return {
                 ...state,
                 sortType: SortType.BY_CITY, 
-                users: sortUsers(state.users, SortType.BY_CITY)
+                users: [...sortUsers(state.users, SortType.BY_CITY)]
             }
         case PanelActionsTypes.TYPE_SORT_BY_COMPANY:
             return {
                 ...state,
                 sortType: SortType.BY_COMPANY, 
-                users: sortUsers(state.users, SortType.BY_COMPANY)
+                users: [...sortUsers(state.users, SortType.BY_COMPANY)]
             }
         default:
             return state

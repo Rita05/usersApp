@@ -1,13 +1,27 @@
 
-import React, { useState } from 'react'
+import { useState } from 'react'
 import UserProfileForm from './userprofile'
 import { connect } from 'react-redux'
 import { CircularProgress } from '@mui/material'
 import { User } from '../userslist/reducer'
 import action from '../userslist/action'
+import { PropTypes as ProfilePresentationTypes } from './userprofile'
 
-const UserProfile=(props: any) => {
-    const [onEdit, setOnEdit] = useState(false);
+export type PropTypes = {
+    user: User | undefined,
+    requireUsersList: () => void
+}
+
+export type ProfileStateType = {
+    user: User | undefined
+}
+
+export type ProfileDispatchType = {
+    requireUsersList: () => void
+}
+
+const UserProfile = (props: PropTypes) => {
+    const [onEdit, setOnEdit] = useState<boolean | undefined>(false)
 
     const onSubmit = (values: any) => {
         console.log(JSON.stringify(values));
@@ -17,29 +31,28 @@ const UserProfile=(props: any) => {
         setOnEdit(!onEdit);
     };
 
-    const templateProps={
+    if (!props.user) {
+        props.requireUsersList()
+    }
+
+    if (props.user === undefined) {
+        return <CircularProgress />
+    }
+
+    const templateProps: ProfilePresentationTypes = {
         user: props.user,
         onSubmit,
         onEditBtnClick,
         onEdit
     }
 
-    if (!props.user) {
-        props.requireUsersList()
-    }
-
     return (
-        <>
-        {
-            props.user 
-            ? <UserProfileForm {...templateProps}/>
-            : <CircularProgress />
-        }
-        </>
+        <UserProfileForm {...templateProps} />
+
     );
 };
 
-const  getEditingUserByIdPath=(users: User[]) : User | undefined =>{
+const getEditingUserByIdPath = (users: User[]): User | undefined => {
     const id = new URLSearchParams(window.location.search).get('id')
     if (id === null) {
         return undefined
@@ -49,7 +62,7 @@ const  getEditingUserByIdPath=(users: User[]) : User | undefined =>{
     return user
 }
 
-const mapStateToProps = (state: any) => {
+const mapStateToProps = (state: any): ProfileStateType => {
     const { users } = state.usersListState
     const user = getEditingUserByIdPath(users)
     return {
@@ -57,10 +70,10 @@ const mapStateToProps = (state: any) => {
     }
 }
 
-const mapDispatchToProps = (dispatch: any) => {
+const mapDispatchToProps = (dispatch: any): ProfileDispatchType => {
     return {
         requireUsersList: () => dispatch(action.ongetUsersAction())
     }
 }
 
-export default connect(mapStateToProps, mapDispatchToProps) (UserProfile)
+export default connect<ProfileStateType, ProfileDispatchType>(mapStateToProps, mapDispatchToProps)(UserProfile)

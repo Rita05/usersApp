@@ -35,7 +35,6 @@ const UsersListContainer = (props: PropsType): React.ReactElement => {
         return () => clearInterval(interval)
     }, [])
 
-
     const onUserProfileRedirect = (user: User) => {
         setRedirectToUserProfile(user)
     }

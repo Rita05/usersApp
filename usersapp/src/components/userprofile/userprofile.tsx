@@ -3,6 +3,7 @@ import { Formik } from 'formik';
 import * as Yup from 'yup';
 import "./style.css";
 import {User} from '../userslist/reducer'
+import Button from '../button/button'
 
 export type PropTypes = {
     onSubmit: (values: any) => void,
@@ -40,7 +41,6 @@ const UserProfileForm=(props: PropTypes) : React.ReactElement =>  {
 
     };
 
-    // const formStyle = props.onEdit ? "profile-form_enabled" : "profile-form_disabled";
     const formStyle="profile-form_styled"
     const labelStyle = "profile-form__label";
 
@@ -59,10 +59,6 @@ const UserProfileForm=(props: PropTypes) : React.ReactElement =>  {
         return onEdit ? "profile-form__comment_enabled" : "profile-form__comment_disabled";
     }
 
-    const selectSubmitBtnStyle = () => {
-        return onEdit ? "profile-form__btnSubmit_enabled" : "profile-form__btnSubmit_disabled";
-    }
-
     return (
         <div>
             <Formik initialValues={initialValues} validationSchema={Yup.object(validationSchema)}
@@ -73,9 +69,7 @@ const UserProfileForm=(props: PropTypes) : React.ReactElement =>  {
                             <div className="profile-form__header__title">
                                 Профиль пользователя
                             </div>
-                            <button className="profile-form__header__editBtn" type="button" onClick={props.onEditBtnClick}>
-                                Редактировать
-                            </button>
+                            <Button type="button" style={{width: "116.67px", height: "27.12px"}} onClick={props.onEditBtnClick}>Редактировать</Button>
                         </div>
                        
                         <div className={formStyle}>
@@ -126,7 +120,7 @@ const UserProfileForm=(props: PropTypes) : React.ReactElement =>  {
                         </div>
                         </div>
                         <div className="profile-form__btnSubmit__wrapper">
-                            <button disabled={!onEdit} className={selectSubmitBtnStyle()} type="submit">Отправить</button>
+                            <Button disabled={!onEdit} type="submit">Отправить</Button>
                         </div>
                     </form>
                 )}

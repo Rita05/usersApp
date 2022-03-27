@@ -1,24 +1,19 @@
 import React from 'react'
-import './App.css'
+import './App.scss'
 import { Container, Box } from '@mui/material'
 import { Route, BrowserRouter, Routes } from 'react-router-dom'
-import UsersPage from './components/pages/userspage'
+import UsersListContainer from './components/userslist/container'
 import UserProfile from './components/userprofile/container'
-import UserProfilePage from './components/pages/profilepage'
+import PageWrapper from './components/pageswrapper/wrapper'
 
-interface Props { }
-
-const App: React.FC<Props> = ({ }) => {
+const App=()=> {
   return (
     <Container>
       <Box className="Box">
-        {/* <UsersPage/> */}
-        {/* <UserProfile/> */}
-        {/* <UserProfilePage/> */}
         <BrowserRouter>
           <Routes>
-            <Route path="/" element={<UsersPage/>} />
-            <Route path="/userprofile/*" element={<UserProfilePage/>} />
+            <Route path="/" element={<PageWrapper><UsersListContainer/></PageWrapper>} />
+            <Route path="/userprofile/*" element={<PageWrapper><UserProfile/></PageWrapper> } />
           </Routes>
         </BrowserRouter>
       </Box>

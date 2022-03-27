@@ -1,0 +1,20 @@
+@import '../fonts.scss';
+
+.button-component {
+    @include main-font;
+    width: 86.13px;
+    height: 24.12px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4B51EF;
+    color: #FFFFFF;
+    &_submit {
+        background-color: #52CF4F;
+    }
+    &_disabled {
+        background-color: #AFAFAF;
+    }
+}
+
+
+

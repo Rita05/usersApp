@@ -1,0 +1,16 @@
+@import '../fonts.scss';
+
+.panelcontainer{
+    width: 152px;
+    height: 1028px;
+    background-color: #BDBDBD;
+}
+
+.panel-title{
+    @include main-font;
+    padding: 35.17px 0 0 20.27px;
+}
+
+.panel-buttons-group{
+    padding: 10.05px 0 0 20px ;
+}
