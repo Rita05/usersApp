@@ -1,9 +1,25 @@
-@mixin main-font{
+@mixin font-size-12{
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
     font-size: 12px;
     line-height: 14px;
+}
+
+@mixin font-size-11{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 11px;
+    line-height: 13px;
+}
+
+@mixin input-font-10{
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 10px;
+    line-height: 12px;
 }
 
 @mixin title-font{

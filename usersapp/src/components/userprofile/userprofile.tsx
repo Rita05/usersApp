@@ -1,7 +1,7 @@
 import React from 'react';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import "./style.css";
+import "./style.scss";
 import {User} from '../userslist/reducer'
 import Button from '../button/button'
 
@@ -41,7 +41,7 @@ const UserProfileForm=(props: PropTypes) : React.ReactElement =>  {
 
     };
 
-    const formStyle="profile-form_styled"
+    const formStyle="profile-form"
     const labelStyle = "profile-form__label";
 
     const selectInputStyle = (inputName: string, formik: any) => {
