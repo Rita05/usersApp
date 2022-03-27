@@ -1,10 +1,11 @@
 import UsersListApi from './userapi'
+import { User } from './reducer'
 
 export const TYPES = {
     TYPE_ONGET_USERS: 'get-array-users'
 }
 
-const ongetUsers=(users: any)=>{
+const ongetUsers=(users: User[])=>{
     return{
         type: TYPES.TYPE_ONGET_USERS,
         users: users
@@ -12,7 +13,6 @@ const ongetUsers=(users: any)=>{
 }
 
 export const ongetUsersAction=()=>async(dispatch: any)=>{
-    // let users=UsersListApi.getTestUsers()
     let users=await UsersListApi.getUsers()
     if (users){
         dispatch(ongetUsers(users))
