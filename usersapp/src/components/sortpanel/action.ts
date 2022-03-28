@@ -3,14 +3,14 @@ export const TYPES = {
     TYPE_SORT_BY_COMPANY: 'sort-by-company-users'
 }
 
-const sortByCityAction=()=>{
-    return{
+const sortByCityAction = () => {
+    return {
         type: TYPES.TYPE_SORT_BY_CITY
     }
 }
 
-const sortByCompanyAction=()=>{
-    return{
+const sortByCompanyAction = () => {
+    return {
         type: TYPES.TYPE_SORT_BY_COMPANY
     }
 }

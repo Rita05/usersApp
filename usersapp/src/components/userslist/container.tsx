@@ -4,8 +4,8 @@ import { useEffect, useState } from 'react'
 import { Navigate } from 'react-router-dom'
 import action from './action'
 import { User } from './reducer'
-import {CircularProgress} from '@mui/material'
-import {PropsType as UsersListPresentationType} from './userslist'
+import { CircularProgress } from '@mui/material'
+import { PropsType as UsersListPresentationType } from './userslist'
 
 export type PropsType = {
     users: User[],
@@ -13,12 +13,12 @@ export type PropsType = {
     isLoading: boolean
 }
 
-export type MyStateType={
+export type MyStateType = {
     users: User[],
     isLoading: boolean
 }
 
-export type MyDispatchType={
+export type MyDispatchType = {
     ongetUsersFromInterval: () => void
 }
 
@@ -50,13 +50,13 @@ const UsersListContainer = (props: PropsType): React.ReactElement => {
 
     return (
         <>
-            {props.isLoading ? <CircularProgress/>: <UsersList {...templateProps} /> }
+            {props.isLoading ? <CircularProgress /> : <UsersList {...templateProps} />}
         </>
     )
 
 }
 
-const mapStateToProps = (state: any) : MyStateType=> {
+const mapStateToProps = (state: any): MyStateType => {
     return {
         users: state.usersListState.users,
         isLoading: state.usersListState.isLoading
@@ -64,7 +64,7 @@ const mapStateToProps = (state: any) : MyStateType=> {
     }
 }
 
-const mapDispatchToProps = (dispatch: any) : MyDispatchType => {
+const mapDispatchToProps = (dispatch: any): MyDispatchType => {
     return {
         ongetUsersFromInterval: () => dispatch(action.ongetUsersAction())
     }

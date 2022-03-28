@@ -6,10 +6,22 @@ import {User} from '../userslist/reducer'
 import Button from '../button/button'
 
 export type PropTypes = {
-    onSubmit: (values: any) => void,
+    onSubmit: (values: InputTypes) => void,
     onEdit?: boolean,
     onEditBtnClick?: () => void,
     user: User
+}
+
+export type InputTypes={
+    name: string,
+    username: string,
+    email: string,
+    street: string,
+    city: string,
+    zipcode: string,
+    phone: string,
+    website: string,
+    comment: string
 }
 
 const UserProfileForm=(props: PropTypes) : React.ReactElement =>  {
@@ -28,7 +40,8 @@ const UserProfileForm=(props: PropTypes) : React.ReactElement =>  {
         comment: Yup.string().max(30),
     }
 
-    const initialValues = {
+
+    const initialValues: InputTypes = {
         name: props.user.name,
         username: props.user.username,
         email: props.user.email,
@@ -38,7 +51,6 @@ const UserProfileForm=(props: PropTypes) : React.ReactElement =>  {
         phone: props.user.phone,
         website: props.user.website,
         comment: ''
-
     };
 
     const formStyle="profile-form"

@@ -6,6 +6,7 @@ import { CircularProgress } from '@mui/material'
 import { User } from '../userslist/reducer'
 import action from '../userslist/action'
 import { PropTypes as ProfilePresentationTypes } from './userprofile'
+import {InputTypes} from './userprofile'
 
 export type PropTypes = {
     user: User | undefined,
@@ -23,7 +24,7 @@ export type ProfileDispatchType = {
 const UserProfile = (props: PropTypes) => {
     const [onEdit, setOnEdit] = useState<boolean | undefined>(false)
 
-    const onSubmit = (values: any) => {
+    const onSubmit = (values: InputTypes) => {
         console.log(JSON.stringify(values));
     };
 

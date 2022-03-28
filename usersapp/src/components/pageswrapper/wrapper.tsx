@@ -12,7 +12,6 @@ export const PageWrapper = (props: any) => {
         </div>
     </div>
     )
-
 }
 
 export default PageWrapper

@@ -1,7 +1,9 @@
+import { User } from './reducer'
+
 class UsersListApi {
-    async getUsers(){
-      let response=await fetch('https://jsonplaceholder.typicode.com/users')
-      return await response.json()
+  async getUsers(): Promise<User[]> {
+    let response = await fetch('https://jsonplaceholder.typicode.com/users')
+    return await response.json()
   }
 }
 
